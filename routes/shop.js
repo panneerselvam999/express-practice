@@ -4,7 +4,7 @@ const route = express.Router();
 
 route.get("/", (req, res, next) => {
   res.send("<h1>Welcom message</h1>");
-  next();
+  // next();
 });
 
 module.exports = route;

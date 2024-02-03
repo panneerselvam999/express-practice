@@ -4,7 +4,8 @@ const router = express.Router();
 router.use("/add", (req, res) => {
   console.log("add Product");
   res.send(
-    '<h1>add Product</h1>  <form action="/store" method="POST"><input type="text" name="title"><input type="submit" value="Submit"></form>'
+    // '<h1>add Product</h1>  <form action="/store" method="POST"><input type="text" name="title"><input type="submit" value="Submit"></form>'
+    '<h1>add Product</h1>  <form action="/admin/store" method="POST"><input type="text" name="title"><input type="submit" value="Submit"></form>'
   );
 });
 

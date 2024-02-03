@@ -204,9 +204,30 @@
 
 // app.listen(PORT);
 // console.log("port is running : " + PORT);
+// // ------------------------------------------------------------------------------------------
+// //middle ware, send method, express listen, middleware, parsing data from request,body-parser
+// // post method, routing, route folder
+
+// const express = require("express");
+// const app = express();
+// const bp = require("body-parser");
+// const PORT = 3500;
+
+// const adminRoute = require("./routes/admin");
+// const shopRoute = require("./routes/shop");
+
+// app.use(adminRoute);
+// app.use(shopRoute);
+// app.use((req, res, next) => {
+//   res.status(404).send("<h1>404 error</h1>");
+// });
+// app.use(bp.urlencoded());
+
+// app.listen(PORT);
+// console.log("port is running : " + PORT);
 // ------------------------------------------------------------------------------------------
 //middle ware, send method, express listen, middleware, parsing data from request,body-parser
-// post method, routing, route folder
+// post method, routing, route folder, filtering paths/URL prefi
 
 const express = require("express");
 const app = express();
@@ -216,10 +237,10 @@ const PORT = 3500;
 const adminRoute = require("./routes/admin");
 const shopRoute = require("./routes/shop");
 
-app.use(adminRoute);
+app.use("/admin", adminRoute);
 app.use(shopRoute);
 app.use((req, res, next) => {
-  res.send("<h1>404 error</h1>");
+  res.status(404).send("<h1>404 error</h1>");
 });
 app.use(bp.urlencoded());
 
