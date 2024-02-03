@@ -218,6 +218,9 @@ const shopRoute = require("./routes/shop");
 
 app.use(adminRoute);
 app.use(shopRoute);
+app.use((req, res, next) => {
+  res.send("<h1>404 error</h1>");
+});
 app.use(bp.urlencoded());
 
 app.listen(PORT);
